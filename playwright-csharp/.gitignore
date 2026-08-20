@@ -1,0 +1,48 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# IDE/editor local state
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Reqnroll generated feature artifacts
+*.feature.cs
+*.feature.ndjson
+
+# Test results and evidence
+/TestResults/
+TestResults-*/
+*.trx
+TestResult*.xml
+coverage/
+*.coverage
+*.coveragexml
+*.cobertura.xml
+*.opencover.xml
+
+# Package/build diagnostics
+artifacts/
+*.nupkg
+*.snupkg
+*.binlog
+*.log
+*.tmp
+*.temp
+
+# Playwright generated artifacts
+.playwright/
+playwright-report/
+playwright-traces/
+blob-report/

@@ -1,0 +1,18 @@
+{
+  "scenarios": {
+    "validRoomDetails": {
+      "room": {
+        "payload": {
+          "type": "Single",
+          "accessible": true,
+          "image": "/images/room1.jpg",
+          "description": "Automated room",
+          "features": [
+            "WiFi",
+            "TV"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+artifacts/
+
+# IDE/editor local state
+.vs/
+.vscode/
+!.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Test results and evidence
+playwright-csharp/TestResults/
+TestResults-*/
+*.trx
+TestResult*.xml
+coverage/
+*.coverage
+*.coveragexml
+*.cobertura.xml
+*.opencover.xml
+
+# Package/build diagnostics
+*.nupkg
+*.snupkg
+*.binlog
+*.log
+*.tmp
+*.temp
+
+# Playwright generated artifacts
+.playwright/
+playwright-report/
+playwright-traces/
+blob-report/

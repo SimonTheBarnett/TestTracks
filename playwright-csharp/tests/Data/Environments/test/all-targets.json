@@ -1,0 +1,23 @@
+{
+  "sites": {
+    "restfulBooker": {
+      "baseUrl": "https://automationintesting.online"
+    }
+  },
+  "apis": {
+    "restfulBookerApi": {
+      "baseUrl": "https://automationintesting.online/api/"
+    }
+  },
+  "credentials": {
+    "restfulBookerAdmin": {
+      "username": "admin",
+      "password": "password"
+    }
+  },
+  "settings": {
+    "defaultTimeoutMs": 10000,
+    "expectTimeoutMs": 5000,
+    "traceOnFailure": true
+  }
+}

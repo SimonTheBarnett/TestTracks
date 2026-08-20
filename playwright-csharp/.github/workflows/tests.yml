@@ -1,0 +1,77 @@
+name: tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: Browser to run
+        required: true
+        default: chromium
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - edge
+      environment:
+        description: Environment data folder to use
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - test
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Formatting
+        run: dotnet format whitespace --verify-no-changes --no-restore
+
+      - name: Lint
+        run: dotnet format style --verify-no-changes --no-restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Install Playwright browser
+        if: github.event_name == 'workflow_dispatch'
+        shell: powershell
+        run: |
+          $browser = "${{ github.event.inputs.browser || 'chromium' }}"
+          if ($browser -eq "edge") {
+            $browser = "msedge"
+          }
+
+          & .\artifacts\bin\test-tracks-playwright-csharp.specs\Debug\net10.0\playwright.ps1 install $browser
+
+      - name: Test examples
+        if: github.event_name == 'workflow_dispatch'
+        shell: powershell
+        run: |
+          $browser = "${{ github.event.inputs.browser || 'chromium' }}"
+          $environment = "${{ github.event.inputs.environment || 'dev' }}"
+          dotnet test --logger "trx;LogFileName=test-results.trx" -e ENV=$environment -e BROWSER=$browser -e HEADLESS=true
+
+      - name: Upload report and traces
+        if: always() && github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-tracks-playwright-csharp-results-${{ github.event.inputs.environment || 'dev' }}-${{ github.event.inputs.browser || 'chromium' }}
+          path: |
+            TestResults/**
+            **/*.trx

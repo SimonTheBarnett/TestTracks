@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+  "formatters": {
+    "html": {
+      "outputFilePath": "../../../../../TestResults/test-tracks-playwright-csharp-report.html"
+    },
+    "message": {
+      "outputFilePath": "../../../../../TestResults/cucumber-messages.ndjson"
+    }
+  }
+}

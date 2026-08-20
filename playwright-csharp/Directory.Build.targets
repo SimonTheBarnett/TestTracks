@@ -1,0 +1,10 @@
+<Project>
+  <Target Name="VerifyLintAndFormattingBeforeTest"
+          BeforeTargets="VSTest"
+          Condition="'$(IsTestProject)' == 'true' and '$(SkipTestQualityChecks)' != 'true'">
+    <Message Importance="high" Text="Running formatting check before tests" />
+    <Exec Command="dotnet format &quot;$(MSBuildThisFileDirectory)test-tracks-playwright-csharp.sln&quot; whitespace --verify-no-changes --no-restore" />
+    <Message Importance="high" Text="Running lint check before tests" />
+    <Exec Command="dotnet format &quot;$(MSBuildThisFileDirectory)test-tracks-playwright-csharp.sln&quot; style --verify-no-changes --no-restore" />
+  </Target>
+</Project>

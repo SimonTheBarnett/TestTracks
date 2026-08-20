@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>test-tracks-playwright-csharp.specs</AssemblyName>
+    <RootNamespace>TestTracks.Playwright.CSharp.Specs</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <ReqnrollUseIntermediateOutputPathForCodeBehind>true</ReqnrollUseIntermediateOutputPathForCodeBehind>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Reqnroll.NUnit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\test-tracks-playwright-csharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\Environments\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="reqnroll.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

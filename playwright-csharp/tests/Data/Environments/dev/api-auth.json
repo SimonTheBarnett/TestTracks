@@ -1,0 +1,16 @@
+{
+  "scenarios": {
+    "validAdminCredentialsProduceAToken": {
+      "payload": {
+        "username": "admin",
+        "password": "password"
+      }
+    },
+    "invalidAdminCredentialsAreRejected": {
+      "payload": {
+        "username": "admin",
+        "password": "wrong-password"
+      }
+    }
+  }
+}

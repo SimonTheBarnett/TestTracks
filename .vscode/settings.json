@@ -1,0 +1,8 @@
+{
+  "cucumber.features": [
+    "playwright-csharp/tests/**/*.feature"
+  ],
+  "cucumber.glue": [
+    "playwright-csharp/tests/**/*.cs"
+  ]
+}
