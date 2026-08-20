@@ -4,7 +4,8 @@ TestTracks is a collection of starter test automation frameworks for different l
 Each folder is a separate implementation with its own setup guide, examples and project structure.
 
 ## Projects
-- [playwright-csharp](./playwright-csharp) - Windows-focused C# Playwright starter framework for browser and API testing with Reqnroll (BDD), environment-based test data, page objects, API clients, cleanup, reports, and GitHub Actions.
+- [playwright-csharp](./playwright-csharp) - Windows-focused C# Playwright starter framework for browser and API testing with Reqnroll (BDD), environment-based test data, page objects, API clients, cleanup and reports.
+- [playwright-java](./playwright-java) - Windows-focused Java Playwright starter framework for browser and API testing with Cucumber-JVM, JUnit Platform, Maven, environment-based test data, page objects, API clients, cleanup and reports.
 
 ## Purpose
 
@@ -18,7 +19,6 @@ Each implementation is intentionally small enough to understand, but complete en
 - reusable API clients
 - scenario-owned cleanup
 - test reports and evidence
-- CI setup
 
 ## Notes
 

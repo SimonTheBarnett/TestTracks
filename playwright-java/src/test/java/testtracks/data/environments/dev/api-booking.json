@@ -1,0 +1,29 @@
+{
+  "scenarios": {
+    "validBookingDetails": {
+      "booking": {
+        "payload": {
+          "firstname": "TT",
+          "lastname": "Guest",
+          "depositpaid": false,
+          "email": "playwright.java@example.test",
+          "phone": "07123456789"
+        },
+        "checkInDaysFromToday": 14,
+        "checkOutDaysFromToday": 15
+      },
+      "room": {
+        "payload": {
+          "type": "Single",
+          "accessible": true,
+          "image": "/images/room1.jpg",
+          "description": "Automated room",
+          "features": [
+            "WiFi",
+            "TV"
+          ]
+        }
+      }
+    }
+  }
+}

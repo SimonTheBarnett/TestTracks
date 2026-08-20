@@ -2,7 +2,7 @@
 
 This is a Windows-focused Playwright C# starter framework for browser and API test automation using .NET, NUnit and Reqnroll BDD.
 
-It is intended as a clean project shape for testers and teams who want BDD feature files, Playwright browser automation, Playwright API testing, environment-based test data, page objects, thin API clients, cleanup, reports and evidence capture without building a full application SDK.
+It is intended as a clean project shape for testers and teams who want BDD feature files, Playwright browser automation, Playwright API testing, environment-based test data, page objects, thin API clients, cleanup, reports and evidence capture.
 
 The repository includes a small set of example tests against `https://automationintesting.online`. The demo app is only there to make the framework concrete.
 
@@ -285,14 +285,6 @@ TestResults/20260820-125641/
 
 That folder contains the Reqnroll HTML report and Cucumber Messages. The report shows run details, including environment, browser and headless mode. API evidence is written into the report. Browser console output and page errors are added only when something is captured. UI failures also include a screenshot and zipped Playwright trace.
 
-## GitHub Actions
-
-The included GitHub Actions workflow runs on Windows.
-
-On push and pull request, it restores, checks formatting, lints and builds the project. Manual runs can execute the public demo examples with a selected environment and browser.
-
-Manual example runs install the selected Playwright browser in the workflow setup before `dotnet test` runs.
-
 ## Structure
 
 ```text
@@ -362,7 +354,7 @@ For a new UI area, add app-specific page objects under `tests/Pages/<service>`, 
 - No mutable state shared between scenarios.
 - No fixed sleeps for browser synchronisation.
 - API setup is used for UI prerequisites where useful.
-- API request payloads are test data first; avoid building a full application SDK.
+- API request payloads are test data first.
 - Cleanup is registered immediately after mutable data is created.
 - Secrets are redacted before evidence is written.
 - No Allure, ExtentReports, SpecFlow, Selenium, RestSharp or external DI framework.

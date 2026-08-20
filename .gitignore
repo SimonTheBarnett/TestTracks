@@ -2,6 +2,7 @@
 [Bb]in/
 [Oo]bj/
 artifacts/
+target/
 
 # IDE/editor local state
 .vs/
@@ -22,6 +23,7 @@ artifacts/
 !.env.example
 
 # Test results and evidence
+TestResults/
 playwright-csharp/TestResults/
 TestResults-*/
 *.trx

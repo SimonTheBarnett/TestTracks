@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "CucumberOpen.cucumber-official"
+    "CucumberOpen.cucumber-official",
+    "vscjava.vscode-java-pack"
   ]
 }

@@ -1,8 +1,11 @@
 {
   "cucumber.features": [
-    "playwright-csharp/tests/**/*.feature"
+    "playwright-csharp/tests/**/*.feature",
+    "playwright-java/src/test/java/testtracks/features/**/*.feature"
   ],
   "cucumber.glue": [
-    "playwright-csharp/tests/**/*.cs"
-  ]
+    "playwright-csharp/tests/**/*.cs",
+    "playwright-java/src/test/java/**/*.java"
+  ],
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
